@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans KR', 'Arial', sans-serif;
+    line-height: 1.5;
+    font-size: 100%;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  .home-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+  }
+  header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 100%);
+    //background-color: #2D4039;
+    padding: 1rem;
+  }
+  .home-header-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  section {
+    width: 100%;
+    max-width: 1320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    border:1px solid red;
+  }
+  .add-grid {
+    background-image: url("grid-pc.png");
+    background-repeat: repeat-y;
+    background-position: center;
+  }
+  footer {
+    height: 60px;
+    width: 100%;
+    background-color: hsl(240, 19%, 98%);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: center;
+  }
+  .home-contents {
+    width: 100%;
+    height: 300px;
+    max-width: 844px;
+    background-color: hsl(0, 0%, 94%);
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-contents-full {
+    width: 100%;
+    height: 700px;
+    background-color: hsl(0, 0%, 94%);
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 1023px) {
+    .add-grid {
+      background-image: url("grid-tablet2.png");
+    }
+    section {
+      width: 100%;
+      border:1px solid black;
+    }
+    .home-contents {
+      max-width: 589px;
+    }
+  }
+  @media (max-width: 768px) {
+    .add-grid {
+      background-image: url("grid-tablet.png");
+    }
+    section {
+      width: 100%;
+      border:1px solid blue;
+    }
+    .home-contents {
+      max-width: 545px;
+    }
+  }
+  @media (max-width: 599px) {
+    .add-grid {
+      background-image: url("grid-mobile.png");
+    }
+    section {
+      width: 100%;
+      border:1px solid yellow;
+    }
+    .home-contents {
+      max-width: 247px;
+    }
+  }
+  @media (max-width: 480px) {
+    .add-grid {
+      background-image: url("grid-mobile.png");
+    }
+    section {
+      width: 100%;
+      border:1px solid green;
+    }
+    .home-contents {
+      max-width: 248px;
+    }
+  }
+</style>
+<script>
+  function converseGrid() {
+    const element = document.querySelector("section");
+    console.log(element);
+    element.classList.toggle("add-grid");
+  }
+</script>
+<html lang="ko">
+  <head>
+    <title>SecoundHouse</title>
+  </head>
+  <body>
+    <div class="home-wrapper">
+        <header>
+            <div>Staybility</div>
+            <div class="home-header-menu">
+                <button onClick="converseGrid()">Grid</button>
+                <div>about</div>
+                <div>로그인</div>
+            </div>
+        </header>
+        <!--div class="home-contents-full">
+            Full Picture
+        </div-->
+        <section>
+            <div class="home-contents">
+                Picture
+            </div>
+            <div class="home-contents">
+                Picture
+            </div>
+            <div class="home-contents">
+                Picture
+            </div>
+        </section>
+        <footer>
+            <span>Staybility | Policy | Location | Privacy</span>
+        </footer>
+    </div>
+  </body>
+</html>
